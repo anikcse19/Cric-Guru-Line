@@ -1,0 +1,10 @@
+::-webkit-scrollbar{
+    height: 4px;
+    width: 4px;
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:horizontal{
+    background-image: linear-gradient(to right, #3d4375, #4a2465, #4d1e62);
+    border-radius: 10px;
+}
