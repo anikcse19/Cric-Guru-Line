@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+
 
 const teams = [
   { name: "India", flag: "https://flagcdn.com/in.svg" },
@@ -36,7 +36,7 @@ const TeamSlider = () => {
   const settings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 6.5,
+    slidesToShow: 7.5,
     slidesToScroll: 2,
     arrows: false,
     swipeToSlide: true,
@@ -80,7 +80,7 @@ const TeamSlider = () => {
   const goNext = () => sliderRef.current?.slickNext();
 
   return (
-    <div className="relative bg-white py-8 px-4 rounded-2xl">
+    <div className="relative bg-white py-2 px-4 rounded-2xl">
       {/* Left button */}
       {canGoPrev && (
         <button
@@ -94,7 +94,7 @@ const TeamSlider = () => {
       {/* Slider */}
       <Slider ref={sliderRef} {...settings}>
         {teams.map((team, index) => (
-          <div key={index} className="">
+          <div key={index} className=" pt-1.5">
             <div className="flex items-center justify-center border w-40 border-[#e0e0e0] rounded-full py-2 bg-white hover:bg-[#efedfb] cursor-pointer ">
               <img
                 src={team.flag}

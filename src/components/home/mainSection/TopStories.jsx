@@ -23,7 +23,7 @@ const stories = [
 export default function TopStories() {
   return (
     <div className="bg-white p-4 rounded shadow space-y-8">
-      <h2 className="font-bold mb-4">TOP STORIES</h2>
+      <h2 className="font-semibold text-xl mb-4">TOP STORIES</h2>
       {stories.map((story, idx) => (
         <div key={idx} className="space-y-2">
           <div className="aspect-video">

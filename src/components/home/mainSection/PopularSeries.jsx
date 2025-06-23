@@ -16,18 +16,22 @@ const series = [
 export default function PopularSeries() {
   return (
     <div className="bg-white p-4 rounded shadow">
-      <h2 className="font-bold mb-4">POPULAR SERIES</h2>
-      <ul className="space-y-2">
+      <h2 className="font-semibold text-xl mb-6">POPULAR SERIES</h2>
+      <ul className="space-y-4 border-b">
         {series.map((item, idx) => (
           <li
             key={idx}
-            className="text-blue-600 hover:underline cursor-pointer"
+            className="hover:text-[#4c549a] border-b pb-4 text-sm hover:underline hover:transition duration-500 cursor-pointer"
           >
             {item}
           </li>
         ))}
       </ul>
-      <button className="mt-4 text-blue-500 hover:underline">See More</button>
+      <div className=" flex items-center justify-center">
+        <button className="mt-4 text-[#4c549a] hover:underline">
+          See More
+        </button>
+      </div>
     </div>
   );
 }

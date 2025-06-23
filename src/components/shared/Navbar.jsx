@@ -1,8 +1,11 @@
+import clsx from "clsx";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location =useLocation()
+
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -15,6 +18,8 @@ const Navbar = () => {
     { name: "Rankings", path: "/rankings" },
     { name: "Polls", path: "/polls" },
   ];
+ 
+
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -25,21 +30,30 @@ const Navbar = () => {
       <div className=" h-24"></div>
       <nav className="bg-gradient-to-r from-[#3d4375] via-[#4a2465] to-[#4d1e62] shadow-lg">
         <div className="max-w-[1400px]  mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between  h-16 items-center">
+          <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex-shrink-0 text-white text-2xl font-bold">
               <Link to="/">
-                <img src="/logo.png" alt="" />
+                <img
+                  src="/logo.png"
+                  alt=""
+                  className=" w-32 h-12 object-cover"
+                />
               </Link>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex justify-between space-x-16  text-white font-medium">
+            <div className="hidden md:flex justify-between space-x-6  text-white font-medium">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="hover:text-yellow-300 transition"
+                  className={clsx(
+                    "hover:text-white text-base font-normal py-5 px-6 transition",
+                    location.pathname === link.path
+                      ? "text-white border-b-4 border-white"
+                      : "text-gray-300  "
+                  )}
                 >
                   {link.name}
                 </Link>
@@ -50,7 +64,7 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={toggleMobileMenu}
-                className="text-white focus:outline-none text-2xl"
+                className="text-white focus:outline-none text-2xl py-5"
               >
                 ☰
               </button>
