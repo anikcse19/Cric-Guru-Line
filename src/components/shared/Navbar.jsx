@@ -4,8 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location =useLocation()
-
+  const location = useLocation();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -14,12 +13,11 @@ const Navbar = () => {
     { name: "Series", path: "/series" },
     { name: "Teams", path: "/teams" },
     { name: "Players", path: "/players" },
+    { name: "News", path: "/news" },
     { name: "Videos", path: "/videos" },
-    { name: "Rankings", path: "/rankings" },
+    { name: "Rankings", path: "/rankings/mens" },
     { name: "Polls", path: "/polls" },
   ];
- 
-
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

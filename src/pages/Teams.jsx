@@ -15,14 +15,14 @@ const teams = [
   { name: "South Africa", image: "https://flagcdn.com/za.svg" },
   { name: "West Indies", image: "https://flagcdn.com/jm.svg" },
   { name: "India Women", image: "https://flagcdn.com/in.svg" },
-  {
-    name: "IPL Archive Stats",
-    image: "https://upload.wikimedia.org/wikipedia/en/2/25/IPL_2022_logo.png",
-  },
-  {
-    name: "IPL",
-    image: "https://upload.wikimedia.org/wikipedia/en/2/25/IPL_2022_logo.png",
-  },
+  { name: "Pakistan", image: "https://flagcdn.com/pk.svg" },
+  { name: "Bangladesh", image: "https://flagcdn.com/bd.svg" },
+  { name: "Sri Lanka", image: "https://flagcdn.com/lk.svg" },
+  { name: "New Zealand", image: "https://flagcdn.com/nz.svg" },
+  { name: "Afghanistan", image: "https://flagcdn.com/af.svg" },
+  { name: "Ireland", image: "https://flagcdn.com/ie.svg" },
+  { name: "Scotland", image: "https://flagcdn.com/gb-sct.svg" },
+  { name: "Nepal", image: "https://flagcdn.com/np.svg" },
 ];
 const Teams = () => {
   return (
