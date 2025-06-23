@@ -12,6 +12,7 @@ const matches = [
     location: "Gwalior, India",
     teamA: { name: "Rewa Jaguars", logo: dummyLogo },
     teamB: { name: "Bhopal Leopards", logo: dummyLogo },
+    status: "Upcoming",
   },
   {
     title: "Tamil Nadu Premier League 2025, 21st Match",
@@ -19,6 +20,7 @@ const matches = [
     location: "Tirunelveli, India",
     teamA: { name: "Chepauk Super Gillies", logo: dummyLogo },
     teamB: { name: "Trichy Grand Cholas", logo: dummyLogo },
+    status: "Live",
   },
   {
     title: "T20 Match",
@@ -26,6 +28,7 @@ const matches = [
     location: "Barbados, West Indies",
     teamA: { name: "West Indies Women", logo: dummyLogo },
     teamB: { name: "South Africa Women", logo: dummyLogo },
+    status: "Upcoming",
   },
   {
     title: "Madhya Pradesh League 2025, 2nd Semi-Final",
@@ -33,6 +36,7 @@ const matches = [
     location: "Gwalior, India",
     teamA: { name: "TBC", logo: dummyLogo },
     teamB: { name: "TBC", logo: dummyLogo },
+    status: "Live",
   },
   {
     title: "Madhya Pradesh League 2025, 2nd Semi-Final",
@@ -40,6 +44,7 @@ const matches = [
     location: "Gwalior, India",
     teamA: { name: "TBC", logo: dummyLogo },
     teamB: { name: "TBC", logo: dummyLogo },
+    status: "Upcoming",
   },
   {
     title: "Madhya Pradesh League 2025, 2nd Semi-Final",
@@ -47,6 +52,7 @@ const matches = [
     location: "Gwalior, India",
     teamA: { name: "TBC", logo: dummyLogo },
     teamB: { name: "TBC", logo: dummyLogo },
+    status: "Upcoming",
   },
 ];
 

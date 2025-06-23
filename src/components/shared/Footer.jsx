@@ -12,13 +12,8 @@ const Footer = () => {
           <img
             src="/logo.png" // Replace with your actual logo path
             alt="Cricket Line Guru"
-            className="h-14 mb-2"
+            className="h-20 w-32 object-cover"
           />
-          <h2 className="font-bold text-lg">
-            CRICKET
-            <br />
-            LINE GURU
-          </h2>
         </div>
 
         {/* App Links */}

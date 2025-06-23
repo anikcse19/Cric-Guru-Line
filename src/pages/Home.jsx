@@ -1,5 +1,5 @@
-import DownloadApp from '@/components/home/mainSection/DownloadApp';
-import FollowUs from '@/components/home/mainSection/FollowUs';
+import DownloadApp from '@/components/shared/DownloadApp';
+import FollowUs from '@/components/shared/FollowUs';
 import LatestPolls from '@/components/home/mainSection/latestPolls/LatestPolls';
 import Sidebar from '@/components/home/mainSection/Sidebar';
 import TopStories from '@/components/home/mainSection/TopStories';
@@ -12,7 +12,7 @@ const Home = () => {
       <div>
         <MatchList></MatchList>
         <TeamSlider></TeamSlider>
-        <div className="my-24 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="py-24 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Sidebar />
           </div>
