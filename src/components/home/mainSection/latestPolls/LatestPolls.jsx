@@ -1,5 +1,5 @@
 import React from "react";
-import { PollCard } from "./PollCard";
+import { PollCard } from "../../../common/PollCard";
 
 const pollsData = [
   {

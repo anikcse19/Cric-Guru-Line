@@ -13,7 +13,7 @@ export function PollCard({ poll }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-4 flex-1">
+    <div className="bg-white rounded-lg shadow p-4 md:min-w-[350px]">
       <div className="bg-gradient-to-r from-[#3d4375] via-[#4a2465] to-[#4d1e62] text-white rounded-t-md p-4 mb-4 text-center">
         <h3 className="font-semibold">{poll.league}</h3>
         <p className="text-sm">{poll.match}</p>

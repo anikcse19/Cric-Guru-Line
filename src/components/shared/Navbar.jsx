@@ -8,13 +8,13 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "IPL🏆", path: "/ipl" },
-    { name: "Schedule ", path: "/schedule" },
-    { name: "Series", path: "/series" },
-    { name: "Teams", path: "/teams" },
-    { name: "Players", path: "/players" },
-    { name: "News", path: "/news" },
-    { name: "Videos", path: "/videos" },
+    { name: "IPL🏆", path: "/cricket-series" },
+    { name: "Schedule ", path: "/cricket-schedule/recent/all" },
+    { name: "Series", path: "/cricket-series" },
+    { name: "Teams", path: "/cricket-teams" },
+    { name: "Players", path: "/cricket-players" },
+    { name: "News", path: "/cricket-news" },
+    { name: "Videos", path: "/cricket-videos" },
     { name: "Rankings", path: "/rankings/mens" },
     { name: "Polls", path: "/polls" },
   ];

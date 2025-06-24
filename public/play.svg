@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+  <g id="play" transform="translate(-129 -60)">
+    <path id="Ellipse_8" data-name="Ellipse 8" d="M38,19A19,19,0,1,1,19,0,19,19,0,0,1,38,19Z" transform="translate(129 60)" fill="#fff"/>
+    <path id="Shape_1" data-name="Shape 1" d="M19,0A19.021,19.021,0,1,0,32.429,5.571,19,19,0,0,0,19,0Zm7.553,19.667L15.47,26.791a.792.792,0,0,1-1.22-.667V11.875a.792.792,0,0,1,1.22-.667l11.083,7.125a.791.791,0,0,1,0,1.331Z" transform="translate(129 60)" fill="red"/>
+  </g>
+</svg>

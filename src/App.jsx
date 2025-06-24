@@ -10,7 +10,7 @@ function App() {
       <Navbar></Navbar>
       <MatchesBar></MatchesBar>
       <div className=" bg-[#eef0f3]">
-        <div className="max-w-[1600px]  mx-auto">
+        <div className="max-w-[1600px] w-[90%] mx-auto">
           <Outlet></Outlet>
         </div>
       </div>
