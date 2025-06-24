@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Schedule = () => {
+const UpcomingTest = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Schedule = () => {
     );
 };
 
-export default Schedule;
+export default UpcomingTest;
