@@ -8,7 +8,7 @@ const WomensRankingPage = () => {
   const navigate = useNavigate();
   return (
     <div className="py-12">
-      <h1 className="font-semibold text-xl">Cricket Rankings</h1>
+      <h1 className="font-semibold text-xl">Cricket Ranking</h1>
       <div className="bg-white p-6 rounded-lg shadow-md mt-6">
         {/* tabs */}
         <div className="flex items-center gap-x-6 text-lg">
