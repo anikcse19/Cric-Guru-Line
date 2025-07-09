@@ -1,7 +1,10 @@
 import App from "@/App";
+import Scorecard from "@/components/matchDetails/match-scorecard/Scorecard";
 import Home from "@/pages/Home";
+import Commentary from "@/pages/matchDetails/Commentary";
+import MatchDetails from "@/pages/matchDetails/MatchDetails";
 import News from "@/pages/News";
-import Players from "@/pages/Players";
+import Players from "@/pages/players/Players";
 import Polls from "@/pages/Polls";
 import MensRanking from "@/pages/Rankings/Men";
 import WomensRankingPage from "@/pages/Rankings/Womens";
@@ -18,8 +21,8 @@ import UpcomingODI from "@/pages/schedule/upcoming/UpcomingODI";
 import UpcomingT10 from "@/pages/schedule/upcoming/UpcomingT10";
 import UpcomingT20 from "@/pages/schedule/upcoming/UpcomingT20";
 import UpcomingTest from "@/pages/schedule/upcoming/UpcomingTest";
-import Series from "@/pages/Series";
-import Teams from "@/pages/Teams";
+import Series from "@/pages/series/Series";
+import Teams from "@/pages/teams/Teams";
 import Videos from "@/pages/Videos";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -57,6 +60,29 @@ const router = createBrowserRouter([
           },
         ],
       },
+      {
+        path: "/match-details/:tab/:id",
+        element: <MatchDetails />,
+      },
+      
+      // {
+      //   path: "/match-details",
+      //   element: <MatchDetails></MatchDetails>,
+      //   children: [
+      //     {
+      //       path: "/commentary/:id",
+      //       element: <Commentary></Commentary>,
+      //     },
+      //     {
+      //       path: "/scorecard/:id",
+      //       element: <Scorecard></Scorecard>,
+      //     },
+      //     {
+      //       path: "/info/:id",
+      //       element: <Info></Info>,
+      //     },
+      //   ],
+      // },
       { path: "/cricket-series", element: <Series></Series> },
       { path: "/cricket-teams", element: <Teams></Teams> },
       { path: "/cricket-players", element: <Players></Players> },
