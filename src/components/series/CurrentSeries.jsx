@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -10,6 +10,9 @@ import {
 import { IoSearchSharp } from "react-icons/io5";;
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
+import { fetchRecentFutureSeries } from "@/pages/series/Action";
+import { groupSeriesByMonth } from "@/pages/series/formatSeriesData";
+import { Link } from "react-router-dom";
 export const matchData = [
   {
     date: "Aug 2025",
@@ -89,7 +92,21 @@ const CurrentSeries = () => {
     const [activeCategory, setActiveCategory] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedYear, setSelectedYear] = useState("");
+    const [seriesData, setSeriesData] = useState([]);
 
+    useEffect(() => {
+      const loadData = async () => {
+        const data = await fetchRecentFutureSeries();
+        if (data) {
+          // setSeriesData(data);
+          const grouped = groupSeriesByMonth(data);
+          setSeriesData(grouped);
+        }
+      };
+
+      loadData();
+    }, []);
+console.log('series data =',seriesData)
     const isResetActive =
       activeCategory === "" && searchTerm === "" && selectedYear === "";
 
@@ -178,8 +195,8 @@ const CurrentSeries = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {matchData.map((dayBlock, idx) => (
-            <TableRow key={idx} className="align-top hover:bg-white ">
+          {seriesData.map((dayBlock, idx) => (
+            <TableRow key={idx} className="align-top hover:bg-white">
               <TableCell className="text-[#413a71] bg-[#e2e2e2] text-lg font-semibold">
                 <div>{dayBlock.date}</div>
               </TableCell>
@@ -189,10 +206,42 @@ const CurrentSeries = () => {
                     key={mIdx}
                     className="space-y-1 border-b pb-4 last:border-none"
                   >
-                    <div className="text-black font-semibold text-base cursor-pointer">
-                      {match.title}
+                    <Link to={`/${match?.key}/overview`}>
+                      <div
+                        // onClick={() => handleRedirect(match.key)}
+                        className="text-black font-semibold text-base cursor-pointer hover:text-[#413a71] transition"
+                      >
+                        {match.n}
+                      </div>
+                    </Link>
+
+                    <div className="text-sm text-gray-500">
+                      {match.formattedTime}
                     </div>
-                    <div className="text-sm text-gray-500">{match.time}</div>
+
+                    {/* Optional: show live status */}
+                    {/* <div className="text-xs mt-1 font-semibold">
+                      <span
+                        className={`${
+                          match.status === "L"
+                            ? "text-green-600"
+                            : match.status === "U"
+                            ? "text-yellow-500"
+                            : "text-gray-400"
+                        }`}
+                      >
+                        {match.status === "L"
+                          ? "Live"
+                          : match.status === "U"
+                          ? "Upcoming"
+                          : "Completed"}
+                      </span>
+                      {match.isPt && (
+                        <span className="ml-2 px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">
+                          Primary
+                        </span>
+                      )}
+                    </div> */}
                   </div>
                 ))}
               </TableCell>

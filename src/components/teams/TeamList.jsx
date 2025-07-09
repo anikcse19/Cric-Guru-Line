@@ -13,20 +13,20 @@ const TeamList = ({data}) => {
         <ul className=" bg-white px-8 py-4 rounded-xl">
           {data.map((team) => (
             <li
-              key={team.name}
+              key={team.n}
               className="flex items-center  border-b py-4 text-base gap-4   "
             >
               <img
-                src={team.image}
-                alt={team.name}
+                src="https://flagcdn.com/in.svg"
+                alt={team.n}
                 className="w-12 h-12 object-cover border rounded-full mr-2"
               />
               <div>
                 <span className="text-base hover:underline hover:transition duration-500 cursor-pointer text-black">
-                  {team.name}
+                  {team.n}
                 </span>
-                {team.country ? (
-                  <h2 className="text-xs text-gray-600">{team.country}</h2>
+                {team.c ? (
+                  <h2 className="text-xs text-gray-600">{team.c}</h2>
                 ) : (
                   ""
                 )}
