@@ -1,12 +1,14 @@
 import Commentary from "@/pages/matchDetails/Commentary";
 import Highlights from "@/pages/matchDetails/Highlights";
-import Info from "@/components/matchDetails/info/Info";
-import Scorecard from "@/components/matchDetails/match-scorecard/Scorecard";
-import Squad from "@/pages/squard/Squad";
+import Info from "@/pages/matchDetails/info/Info";
+import Squad from "@/pages/matchDetails/squard/Squad";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DownloadApp from "@/components/shared/DownloadApp";
 import FollowUs from "@/components/shared/FollowUs";
+import Scorecard from "./scoreboard/Scorecard";
+// import Scorecard from "./scoreboard/Scorecard";
+
 
 const tabs = [
   { label: "Commentary", key: "commentary" },
@@ -68,9 +70,8 @@ const MatchDetails = () => {
           {/* <TeamList data={players}></TeamList> */}
         </div>
         <div className="col-span-1 space-y-4">
-
           <DownloadApp></DownloadApp>
-        <FollowUs></FollowUs>
+          <FollowUs></FollowUs>
         </div>
       </div>
     </div>
