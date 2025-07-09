@@ -1,6 +1,6 @@
 // action.js
 
-import { BASE_URL } from "../../../config";
+import { BASE_URL } from "../../../../config";
 
 export const fetchMatchSquad = async (matchId) => {
   try {

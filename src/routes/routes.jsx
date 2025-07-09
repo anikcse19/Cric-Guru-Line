@@ -1,7 +1,7 @@
 import App from "@/App";
-import Scorecard from "@/components/matchDetails/match-scorecard/Scorecard";
+
 import Home from "@/pages/Home";
-import Commentary from "@/pages/matchDetails/Commentary";
+
 import MatchDetails from "@/pages/matchDetails/MatchDetails";
 import News from "@/pages/News";
 import Players from "@/pages/players/Players";
