@@ -32,7 +32,7 @@ const Squad = () => {
     return roles[roleCode] || "Unknown";
   };
   return (
-    <div className=" mx-auto px-20 p-4">
+    <div className=" mx-auto px-12 p-4">
       {/* Team Names */}
       <div className="flex justify-between items-center border-b py-2 my-6">
         <div className="flex items-center gap-2 font-bold text-3xl">
@@ -91,7 +91,7 @@ const Squad = () => {
               key={idx}
               className="flex items-center border-b justify-end gap-2 py-1"
             >
-              <div>
+              <div className=" flex flex-col items-end">
                 <div className="font-semibold text-base">{player?.n}</div>
                 <div className="text-sm text-gray-500">
                   {getRole(player?.r)}
@@ -132,8 +132,8 @@ const Squad = () => {
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div>
-                <div className="font-semibold text-sm">{player?.n}</div>
-                <div className="text-xs text-gray-500">
+                <div className="font-semibold text-base">{player?.n}</div>
+                <div className="text-sm text-gray-500">
                   {getRole(player?.r)}
                 </div>
               </div>
@@ -148,6 +148,12 @@ const Squad = () => {
               key={idx}
               className="flex justify-end items-start border-b gap-2 py-1"
             >
+              <div className=" flex flex-col items-end">
+                <div className="font-semibold text-base">{player?.n}</div>
+                <div className="text-sm text-gray-500">
+                  {getRole(player?.r)}
+                </div>
+              </div>
               <img
                 src={
                   player?.l
@@ -157,12 +163,6 @@ const Squad = () => {
                 alt={player?.n}
                 className="w-10 h-10 rounded-full object-cover"
               />
-              <div>
-                <div className="font-semibold text-sm">{player?.n}</div>
-                <div className="text-xs text-gray-500">
-                  {getRole(player?.r)}
-                </div>
-              </div>
             </div>
           ))}
         </div>

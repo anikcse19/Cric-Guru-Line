@@ -15,7 +15,7 @@ const MatchCard = ({match}) => {
       </Link>
       {/* add pt-1 if status is Live or pt-4 */}
       <Link
-        to={`/match-details/commentary/${match?.key}`}
+        to={`/match-details/info/${match?.key}`}
         className=" cursor-pointer"
       >
         <div

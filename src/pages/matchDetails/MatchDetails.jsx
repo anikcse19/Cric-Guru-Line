@@ -1,5 +1,5 @@
 import Commentary from "@/pages/matchDetails/Commentary";
-import Highlights from "@/pages/matchDetails/Highlights";
+import Highlights from "@/pages/matchDetails/highlight/Highlights";
 import Info from "@/pages/matchDetails/info/Info";
 import Squad from "@/pages/matchDetails/squard/Squad";
 import React from "react";
@@ -7,20 +7,22 @@ import { useNavigate, useParams } from "react-router-dom";
 import DownloadApp from "@/components/shared/DownloadApp";
 import FollowUs from "@/components/shared/FollowUs";
 import Scorecard from "./scoreboard/Scorecard";
+import PointsTable from "./pointsTable/PointsTable";
 // import Scorecard from "./scoreboard/Scorecard";
 
 
 const tabs = [
   { label: "Commentary", key: "commentary" },
-  { label: "Scorecard", key: "scorecard" },
+  { label: "Scorecard", key: "match-scorecard" },
   { label: "Info", key: "info" },
   { label: "Squad", key: "squad" },
   { label: "Highlights", key: "highlights" },
+  { label: "Points Table", key: "points-table" },
 ];
 
 const MatchDetails = () => {
   const navigate = useNavigate();
-  const { tab = "commentary", id } = useParams();
+  const { tab = "info", id } = useParams();
 
   const handleTabChange = (newTab) => {
     navigate(`/match-details/${newTab}/${id}`);
@@ -30,7 +32,7 @@ const MatchDetails = () => {
     switch (tab) {
       case "commentary":
         return <Commentary id={id} />;
-      case "scorecard":
+      case "match-scorecard":
         return <Scorecard id={id} />;
       case "info":
         return <Info id={id} />;
@@ -38,6 +40,8 @@ const MatchDetails = () => {
         return <Squad id={id} />;
       case "highlights":
         return <Highlights id={id} />;
+      case "points-table":
+        return <PointsTable id={id} />;
       default:
         return <div>Tab not found</div>;
     }
