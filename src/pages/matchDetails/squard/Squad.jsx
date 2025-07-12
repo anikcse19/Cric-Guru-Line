@@ -19,7 +19,7 @@ const Squad = () => {
       loadData();
     }
   }, [id]);
-  console.log("squarddata= ", squadData);
+
   if (!squadData) return <p>Loading squad...</p>;
   const getRole = (roleCode) => {
     const roles = [
@@ -110,63 +110,78 @@ const Squad = () => {
           ))}
         </div>
       </div>
+      {squadData?.b1 || squadData?.b2 ? (
+        <>
+          <div className="text-center my-4 text-gray-700 font-semibold border-b w-full">
+            Bench
+          </div>
 
+          {/* Bench Players */}
+          <div className="flex justify-between items-center border-y py-4">
+            {/* Team 1 Bench */}
+            {squadData?.b1 ? (
+              <div className=" border-r w-1/2 pr-2 ">
+                {squadData?.b1.map((player, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center border-b gap-2 py-1"
+                  >
+                    <img
+                      src={
+                        player?.l
+                          ? `${imageUrl}/players/${player?.l}`
+                          : "/default-avatar.png"
+                      }
+                      alt={player?.n}
+                      className="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div>
+                      <div className="font-semibold text-base">{player?.n}</div>
+                      <div className="text-sm text-gray-500">
+                        {getRole(player?.r)}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <></>
+            )}
+
+            {/* Team 2 Bench */}
+            {
+              squadData?.b2 ? <div className="w-1/2 pl-2 ">
+              {squadData?.b2.map((player, idx) => (
+                <div
+                  key={idx}
+                  className="flex justify-end items-start border-b gap-2 py-1"
+                >
+                  <div className=" flex flex-col items-end">
+                    <div className="font-semibold text-base">{player?.n}</div>
+                    <div className="text-sm text-gray-500">
+                      {getRole(player?.r)}
+                    </div>
+                  </div>
+                  <img
+                    src={
+                      player?.l
+                        ? `${imageUrl}/players/${player?.l}`
+                        : "/default-avatar.png"
+                    }
+                    alt={player?.n}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>:<></>
+            }
+           
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
       {/* Bench Title */}
-      <div className="text-center my-4 text-gray-700 font-semibold border-b w-full">
-        Bench
-      </div>
-
-      {/* Bench Players */}
-      <div className="flex justify-between items-center border-y py-4">
-        {/* Team 1 Bench */}
-        <div className=" border-r w-1/2 pr-2 ">
-          {squadData?.b1.map((player, idx) => (
-            <div key={idx} className="flex items-center border-b gap-2 py-1">
-              <img
-                src={
-                  player?.l
-                    ? `${imageUrl}/players/${player?.l}`
-                    : "/default-avatar.png"
-                }
-                alt={player?.n}
-                className="w-10 h-10 rounded-full object-cover"
-              />
-              <div>
-                <div className="font-semibold text-base">{player?.n}</div>
-                <div className="text-sm text-gray-500">
-                  {getRole(player?.r)}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Team 2 Bench */}
-        <div className="w-1/2 pl-2 ">
-          {squadData?.b2.map((player, idx) => (
-            <div
-              key={idx}
-              className="flex justify-end items-start border-b gap-2 py-1"
-            >
-              <div className=" flex flex-col items-end">
-                <div className="font-semibold text-base">{player?.n}</div>
-                <div className="text-sm text-gray-500">
-                  {getRole(player?.r)}
-                </div>
-              </div>
-              <img
-                src={
-                  player?.l
-                    ? `${imageUrl}/players/${player?.l}`
-                    : "/default-avatar.png"
-                }
-                alt={player?.n}
-                className="w-10 h-10 rounded-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };

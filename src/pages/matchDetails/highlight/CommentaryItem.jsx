@@ -7,8 +7,8 @@ export default function CommentaryItem({ item }) {
       <div className="flex  gap-2">
         <span className="font-bold">{item?.ov}</span>
 
-        <p className="text-base" dangerouslySetInnerHTML={{ __html: item.c }}/>
-          {/* {item.c}
+        <p className="text-base" dangerouslySetInnerHTML={{ __html: item.c }} />
+        {/* {item.c}
         </p> */}
       </div>
       {item.v && (
@@ -29,7 +29,7 @@ export default function CommentaryItem({ item }) {
             ? "4"
             : item?.v === "6"
             ? "6"
-            : ""}
+            : item?.v}
         </div>
       )}
     </div>

@@ -21,7 +21,7 @@ const MatchList = () => {
 
     fetchMatchList();
   }, []);
-  console.log(matches)
+  console.log("matches = ",matches)
   return (
     <div className=" py-6 px-4">
       <div
