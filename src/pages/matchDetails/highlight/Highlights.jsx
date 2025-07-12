@@ -42,28 +42,30 @@ const Highlights = () => {
   
     return (
       <section className="  p-4">
-        {/* Tabs */}
-        <div className="grid lg:grid-cols-6 grid-cols-1 border  w-full mb-4">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`xl:px-12 px-8 py-4 font-medium border border-gray-200 ${
-                activeTab === tab
-                  ? "border-purple-900 text-white bg-purple-900"
-                  : " text-gray-600 hover:bg-purple-900  hover:text-white "
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* Commentary Items */}
         {filteredData?.length > 0 ? (
-          filteredData.map((item, index) => (
-            <CommentaryItem key={index} item={item} />
-          ))
+          <>
+            {/* Tabs */}
+            <div className="grid lg:grid-cols-6 grid-cols-1 border  w-full mb-4">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`xl:px-12 px-8 py-4 font-medium border border-gray-200 ${
+                    activeTab === tab
+                      ? "border-purple-900 text-white bg-purple-900"
+                      : " text-gray-600 hover:bg-purple-900  hover:text-white "
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            {/* Commentary Items */}
+            {filteredData.map((item, index) => (
+              <CommentaryItem key={index} item={item} />
+            ))}
+          </>
         ) : (
           <p className="text-center text-red-500 text-xl font-semibold py-10">
             There are no highlights of this type in this innings

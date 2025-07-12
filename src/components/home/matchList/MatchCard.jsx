@@ -1,50 +1,63 @@
 import clsx from "clsx";
 import React from "react";
 import { Link } from "react-router-dom";
-export const dummyLogo =
-  "https://res.cloudinary.com/demnpqwx3/image/upload/v1747644047/zptv1knujo1i0kdun0eg.png";
+import { imageUrl } from "../../../../config";
+
 const MatchCard = ({match}) => {
+  const formatMatchTime = (timestamp) => {
+    const date = new Date(timestamp * 1000); // Convert to milliseconds
+
+    const time = date.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+    const datePart = date.toLocaleDateString("en-US", {
+      day: "2-digit",
+      month: "short",
+    });
+
+    return `${time}, ${datePart}`;
+  };
 
   return (
-    <div>
+    <div className=" w-[400px]">
       <Link
         to="/#"
-        className="text-[13px] font-semibold text-black hover:underline hover:text-[#4c549a] w-[300px] whitespace-nowrap overflow-hidden truncate"
+        className="text-[13px] font-semibold text-black hover:underline hover:text-[#4c549a] w-[400px] whitespace-nowrap overflow-hidden truncate"
       >
-        {match?.sr},{match?.n} 
+        {match?.sr},{match?.n}
       </Link>
       {/* add pt-1 if status is Live or pt-4 */}
       <Link
-        to={`/match-details/info/${match?.key}`}
+        to={`/match-details/commentary/${match?.key}`}
         className=" cursor-pointer"
       >
         <div
           className={clsx(
-            "bg-white rounded-xl shadow-sm mt-2 px-4 pb-4 w-[300px] flex-shrink-0 border border-gray-200",
+            "bg-white rounded-xl shadow-sm mt-2 px-4 pb-4 w-[330px] flex-shrink-0 border border-gray-200",
             status === "Live" ? "pt-0.5" : "pt-4"
           )}
         >
           <div className="">
-            <div
-              className={clsx(
-                status === "Live"
-                  ? " flex items-center text-red-600 font-bold  justify-end text-xs"
-                  : " hidden"
-              )}
-            >
-              <p className="w-2 h-2 mr-1 rounded-full bg-red-600 animate-pulse inline-block" />
-              Live{" "}
-            </div>
+            {!match?.rl && match?.isPt && (
+              <div className="flex items-center text-red-600 font-bold justify-end text-xs">
+                <p className="w-2 h-2 mr-1 rounded-full bg-red-600 animate-pulse inline-block" />
+                Live
+              </div>
+            )}
 
             <p className="text-[13px]  text-black font-semibold mb-1">
-              <span className="">12-08-2025</span> • {match?.g}
+              <span className="">{formatMatchTime(match?.t)}</span> •{" "}
+              {match?.g?.split(" ").slice(-2).join(" ")}
             </p>
 
             <div className="space-y-2 mt-3">
               <div className="flex items-center gap-12">
                 <div className=" flex items-center gap-2">
                   <img
-                    src={dummyLogo}
+                    src={`${imageUrl}/teams/${match?.teams?.t1?.l}`}
+                    // src={dummyLogo}
                     alt={match?.teams?.t1?.k}
                     className="w-6 h-6 rounded-full"
                   />
@@ -60,7 +73,7 @@ const MatchCard = ({match}) => {
               <div className="flex items-center gap-12">
                 <div className=" flex items-center gap-2">
                   <img
-                    src={dummyLogo}
+                    src={`${imageUrl}/teams/${match?.teams?.t2?.l}`}
                     alt={match?.teams?.t2?.k}
                     className="w-6 h-6 rounded-full"
                   />

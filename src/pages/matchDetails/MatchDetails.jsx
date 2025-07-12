@@ -1,4 +1,4 @@
-import Commentary from "@/pages/matchDetails/Commentary";
+import Commentary from "@/pages/matchDetails/commentary/Commentary";
 import Highlights from "@/pages/matchDetails/highlight/Highlights";
 import Info from "@/pages/matchDetails/info/Info";
 import Squad from "@/pages/matchDetails/squard/Squad";
@@ -22,7 +22,7 @@ const tabs = [
 
 const MatchDetails = () => {
   const navigate = useNavigate();
-  const { tab = "info", id } = useParams();
+  const { tab = "commentary", id } = useParams();
 
   const handleTabChange = (newTab) => {
     navigate(`/match-details/${newTab}/${id}`);
