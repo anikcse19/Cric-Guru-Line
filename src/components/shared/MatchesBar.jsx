@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaSortDown } from "react-icons/fa";
 import { fetchMatchLists } from "../home/matchList/Action";
+import { Link } from "react-router-dom";
 
 export default function MatchesBar() {
   const [matches, setMatches] = useState([]);
@@ -47,13 +48,17 @@ export default function MatchesBar() {
         {matches.slice(0, 4).map((match, idx) => {
           const status = getMatchStatus(match);
           return (
-            <span key={idx} className="flex text-sm items-center mr-6">
+            <Link
+              to={`/match-details/commentary/${match?.key}`}
+              key={idx}
+              className="flex text-sm items-center mr-6"
+            >
               {match?.teams?.t1?.s} vs {match?.teams?.t2?.s}
               <span className="mx-1 text-gray-400">•</span>
               <span className={`${status.color} font-semibold`}>
                 {status.text}
               </span>
-            </span>
+            </Link>
           );
         })}
         <div
@@ -70,7 +75,11 @@ export default function MatchesBar() {
           {matches.map((match, idx) => {
             const status = getMatchStatus(match);
             return (
-              <div key={idx}>
+              <Link
+                to={`/match-details/info/${match?.key}`}
+                onClick={() => setShowAll(!showAll)}
+                key={idx}
+              >
                 <p className="text-xs text-gray-500">{match.sr}</p>
                 <p className="text-sm font-semibold">
                   {match.teams?.t1?.n} vs {match.teams?.t2?.n}, {match.n}{" "}
@@ -78,7 +87,7 @@ export default function MatchesBar() {
                     {status.text}
                   </span>
                 </p>
-              </div>
+              </Link>
             );
           })}
         </div>
